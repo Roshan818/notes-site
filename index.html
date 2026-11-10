@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Locked</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="vendor/katex.min.css" />
+  </head>
+  <body>
+    <main id="lock" class="lock">
+      <form id="lock-form" class="lock-card" autocomplete="on">
+        <div class="lock-icon" aria-hidden="true">📓</div>
+        <h1>This notebook is private</h1>
+        <label for="password" class="sr-only">Password</label>
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password" required autofocus />
+        <label class="remember"><input id="remember" type="checkbox" checked /> Remember on this device</label>
+        <button type="submit" id="unlock">Unlock</button>
+        <p id="lock-error" class="lock-error" role="alert"></p>
+      </form>
+    </main>
+
+    <div id="app" class="app" hidden>
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+        <a href="#/" class="brand" id="brand"></a>
+        <div class="search">
+          <input id="search" type="search" placeholder="Search notes…" autocomplete="off" />
+          <div id="search-results" class="search-results" hidden></div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+          <button class="icon-btn" id="lock-btn" aria-label="Lock" title="Lock and forget on this device">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          </button>
+        </div>
+      </header>
+      <nav id="sidebar" class="sidebar"></nav>
+      <section id="view" class="view" tabindex="-1"></section>
+    </div>
+    <div id="tooltip" class="tooltip" hidden></div>
+
+    <script src="vendor/marked.js"></script>
+    <script src="vendor/katex.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
